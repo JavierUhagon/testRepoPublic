@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accessibility Test Page</title>
+    <style>
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        /* Low contrast text */
+        .low-contrast {
+            color: #cccccc;
+            background-color: #eeeeee;
+        }
+    </style>
+</head>
+<body>
+    <!-- Missing language attribute on html tag -->
+    
+    <!-- Missing alt text on image -->
+    <img src="sample.jpg">
+    <img src="sample.jpg">
+
+    
+    <!-- Empty button without accessible name -->
+    <button></button>
+    
+    <!-- Div used as button without proper role or keyboard accessibility -->
+    <div class="button" onclick="alert('Clicked')">Click me</div>
+    
+    <!-- Missing form labels -->
+    <form>
+        <input type="text" placeholder="Enter your name">
+        <input type="email" placeholder="Enter your email">
+        <input type="checkbox"> I agree to terms
+    </form>
+    
+    <!-- Missing heading hierarchy (skipping h1) -->
+    <h3>Welcome to our website</h3>
+    <h2>About us</h2>
+    
+    <!-- Low contrast text -->
+    <p class="low-contrast">This text has poor contrast and is hard to read.</p>
+    
+    <!-- Empty link -->
+    <a href="#"></a>
+    
+    <!-- Link with non-descriptive text -->
+    <a href="https://example.com">Click here</a>
+    
+    <!-- Missing table headers -->
+    <table border="1">
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>Jane</td>
+            <td>Smith</td>
+            <td>25</td>
+        </tr>
+    </table>
+    
+    <!-- Inaccessible color-only information -->
+    <p>Fields marked in <span style="color:red">red</span> are required</p>
+    
+    <!-- Non-semantic structure -->
+    <div>
+        <div>Navigation Item 1</div>
+        <div>Navigation Item 2</div>
+    </div>
+    
+    <!-- No keyboard focus indicator override -->
+    <style>
+        :focus {
+            outline: none !important;
+        }
+    </style>
+</body>
+</html>
